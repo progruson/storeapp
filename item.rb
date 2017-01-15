@@ -4,22 +4,17 @@ class Item
     @price = 30 # object property
   end
 
-  # getter
-  def price
-    @price
-  end
+  # attr_accessor :price, :weight
 
-  #setter
-  def price=(price_value)
-    @price = price_value
-  end
+  attr_reader :price, :weight # getters
+  attr_writer :price          # setters
 
 end
 
 item1 = Item.new
+
+item1.price = 10
 puts item1.price
 
-item1.price = 10 # or item1.price=(10)
-puts item1.price
-item1.price = 20
-puts item1.price
+item1.weight = 10
+puts item1.weight
