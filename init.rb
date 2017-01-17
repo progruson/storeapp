@@ -11,3 +11,5 @@ p cart.items
 cart.remove_item
 
 p cart.items
+
+cart.validate
