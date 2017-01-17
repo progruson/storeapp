@@ -2,8 +2,7 @@ class Order
 
   attr_reader :items # getter
 
-  include ItemContainer::Manager
-  include ItemContainer::Info
+  include ItemContainer
 
   def initialize
     @items = []
