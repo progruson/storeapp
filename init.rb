@@ -10,11 +10,4 @@ cart = Cart.new
 cart.add_item item1
 cart.add_item item2
 
-p cart.items
-
-cart.delete_invalid_items
-
-p cart.items
-
-p item1.respond_to?(:weight) # false
-p item2.respond_to?(:weight) # true
+puts item1.price
