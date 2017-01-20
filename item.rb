@@ -1,6 +1,6 @@
 class Item
 
-  @@discount = 0.1 # переменная класса
+  @@discount = 0.05 # переменная класса
 
   def self.discount # Метод класса
     if Time.now.month == 4
