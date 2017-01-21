@@ -10,9 +10,9 @@ class Item
     end
   end
 
-  def initialize(options={})
+  def initialize(name, options={})
     @real_price  = options[:price]  # object property
-    @name        = options[:name]   # object property
+    @name        = name             # object property
   end
 
   attr_reader :real_price, :name # getters

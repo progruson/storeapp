@@ -4,7 +4,7 @@ class RealItem < Item
 
   def initialize(options)
     @weight = options[:weight] # object property
-    super
+    super(options[:name], options)
   end
 
   def info
