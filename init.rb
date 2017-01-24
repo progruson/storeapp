@@ -13,23 +13,13 @@ StoreApplication.config do |app|
 
 end
 
-unless StoreApplication.frozen?
-  StoreApplication.name = "My name"
-end
-
-# StoreApplication::Admin.email = "new@mystore.com"
-p StoreApplication::Admin.email
-
 @items = []
 @items << AntiqueItem.new("car", price: 101, weight: 100)
 @items << RealItem.new({:weight => 100, :price => 101, :name => 'kettle'})
 @items << RealItem.new({:weight => 100, :price => 101, :name => 'dishwasher'})
 
-cart = Cart.new("ruslan")
-cart.add_item RealItem.new({:weight => 100, :price => 101, :name => 'car'})
-cart.add_item RealItem.new({:weight => 100, :price => 150, :name => 'car'})
-cart.add_item RealItem.new({:weight => 100, :price => 120, :name => 'kettle'})
-
 order = Order.new
-@items.each { |i| order.add_item(i) }
 order.place
+
+puts order.placed_at.utc
+puts order.time_spend_on_sending_email.strftime("%b %-d, %Y %H:%M:%S")
